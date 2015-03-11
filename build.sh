@@ -2,10 +2,9 @@
 set -x
 set -e
 
-# display some debug logs (please disable to hide your sensitive credentials!)
-pwd
-env
-
+## display some debug logs (please disable to hide your sensitive credentials!)
+#pwd
+#env
 
 # fetch hugo and show version in build log
 if [ "$DRONE" == "true" ]; then
@@ -15,6 +14,7 @@ hugo version
 
 # build the static web content
 cd ./hugo-website
+for i in $(find . -type d -regex ``./[^.].*'' -empty); do touch $i"/.gitignore"; done;
 if [ "$DRONE_BRANCH" == "xxxmaster" ]; then
   # build production posts only
   hugo --theme=hugo-uno
@@ -28,8 +28,6 @@ if [ "$DRONE" == "true" ]; then
   echo "...push it"
 else
   echo "...local, don't push"
+  open http://localhost:1313/
+  hugo server --theme=hugo-uno --buildDrafts
 fi
-
-# list static web content
-ls -alR ./public
-
