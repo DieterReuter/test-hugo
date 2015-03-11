@@ -1,3 +1,5 @@
+[![Build Status](https://drone.io/github.com/DieterReuter/test-hugo/status.png)](https://drone.io/github.com/DieterReuter/test-hugo/latest)
+
 # test-hugo
 Test Hugo, deploy to gh_pages using Drone.io
 
