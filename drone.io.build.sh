@@ -8,14 +8,14 @@ env
 
 
 # fetch hugo and show version in build log
-if [ "x$DRONE" == "xtrue" ]; then
+if [ "$DRONE" == "true" ]; then
   go get -u -v github.com/spf13/hugo
 fi
 hugo version
 
 # build the static web content
 cd ./hugo-website
-if [ "x$DRONE_BRANCH" == "xmaster" ]; then
+if [ "$DRONE_BRANCH" == "master" ]; then
   # build production posts only
   hugo --theme=hugo-uno
 else
@@ -24,7 +24,7 @@ else
 fi
 
 # push the static web content to gh-pages
-if [ "x$DRONE" == "xtrue" ]; then
+if [ "$DRONE" == "true" ]; then
   echo "...push it"
 else
   echo "...local, don't push"
