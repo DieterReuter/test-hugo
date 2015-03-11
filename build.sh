@@ -2,9 +2,6 @@
 set -x
 set -e
 
-# pull all themes
-git submodule foreach git pull
-
 ## display some debug logs (please disable to hide your sensitive credentials!)
 #pwd
 #env

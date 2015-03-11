@@ -1,0 +1,3 @@
+[submodule "hugo-website/themes/hugo-uno"]
+	path = hugo-website/themes/hugo-uno
+	url = https://github.com/SenjinDarashiva/hugo-uno

@@ -87,7 +87,7 @@ Let's install a specific theme.
 ```bash
 mkdir themes
 cd themes
-git clone https://github.com/SenjinDarashiva/hugo-uno
+git submodule add https://github.com/SenjinDarashiva/hugo-uno hugo-uno
 cd ..
 ```
 
