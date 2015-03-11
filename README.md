@@ -31,16 +31,31 @@ Later we'll come back to this configuration page to define some ENV variables wi
 
 ## 4. Create a GitHub Token for pushing back our static web content
 Click this [link](https://github.com/settings/tokens/new) to generate a new personal access token. You might need to re-enter your password.
-![screen1](/images/01-create-github-access-token.png)
+
+![screen1](/images/01-create-github-access-token-public-repo.png)
+That's right, just `public_repo`. If your repository is private, you can set `repo` instead.
 
 Now copy the generated token.
 ![screen2](/images/02-copy-github-access-token.png)
 
-This token we define as an ENV variable within the Drone.io build setting.
+This token we'll define as an ENV variable within the Drone.io build setting. Then it's available within our build step but it's hidden for the public.
 ![screen3](/images/03-paste-github-access-token-as-env-to-drone-io.png)
 
 
-## 5. Creating a basic Hugo site
+## 5. Ensure we have enabled `gh-pages`
+
+`GitHub Pages` is just another branch `gh-pages` of your repo.
+You want to make sure your branch `gh-pages` already exists.
+```bash
+git checkout master
+git checkout -b gh-pages
+git push origin -u gh-pages
+git checkout master
+```
+Easy enough, isn't it?
+
+
+## 6. Creating a basic Hugo site
 First we define not to include the generated static web page to save in out git repo.
 ```bash
 echo "/public" >> .gitignore
