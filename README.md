@@ -78,9 +78,9 @@ cd ./hugo-website
 
 Now you have a new and default `config.toml` Hugo configuration file.
 ```toml
-baseurl = "http://yourSiteHere/"
+baseurl = "https://dieterreuter.github.io/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Dieter's Blog"
 ```
 
 Let's install a specific theme.

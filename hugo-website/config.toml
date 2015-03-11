@@ -1,3 +1,12 @@
 baseurl = "https://dieterreuter.github.io/"
 languageCode = "en-us"
 title = "Dieter's Blog"
+theme = "hugo-uno"
+author = "Dieter Reuter"
+
+[Params]
+description = "Dieter's Blog on GitHub.io"
+AuthorName = "Dieter"
+github = "dieterreuter"
+twitter = "Quintus23M"
+email = "dieter.reuter@me.com"
