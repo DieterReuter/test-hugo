@@ -2,6 +2,10 @@
 set -x
 set -e
 
+# display some debug logs (please disable to hide your sensitive credentials!)
+pwd
+env
+
 # check if we're running a Drone.io or a local build
 if [ "x$GH_TOKEN" == "x" ]; then
   DRONE_BUILD="N"
@@ -18,10 +22,6 @@ if [ "x$DRONE_BUILD" == "xY" ]; then
   go get -u -v github.com/spf13/hugo
 fi
 hugo version
-
-# display some debug logs (please disable to hide your sensitive credentials!)
-pwd
-env
 
 # build the static web content
 cd ./hugo-website
