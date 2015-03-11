@@ -21,10 +21,10 @@ rm -fr ./public
 for i in $(find . -type d -regex ``./[^.].*'' -empty); do touch $i"/.gitignore"; done;
 if [ "$DRONE_BRANCH" == "xxxmaster" ]; then
   # build production posts only
-  hugo --theme=hugo-uno
+  hugo
 else
   # build including all draft posts
-  hugo --theme=hugo-uno --buildDrafts
+  hugo --buildDrafts
 fi
 
 # push the static web content to gh-pages
@@ -34,5 +34,5 @@ if [ "$DRONE" == "true" ]; then
 else
   echo "...local, don't push"
   open http://localhost:1313/
-  hugo server --theme=hugo-uno --buildDrafts
+  hugo server --buildDrafts
 fi
