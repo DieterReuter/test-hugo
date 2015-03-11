@@ -16,7 +16,7 @@ hugo version
 cd ./hugo-website
 rm -fr ./public
 for i in $(find . -type d -regex ``./[^.].*'' -empty); do touch $i"/.gitignore"; done;
-if [ "$DRONE_BRANCH" == "master" ]; then
+if [ "$DRONE_BRANCH" == "xxxmaster" ]; then
   # build production posts only
   hugo --theme=hugo-uno
 else
