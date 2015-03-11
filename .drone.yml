@@ -1,0 +1,9 @@
+git:
+  path: github.com/dieterreuter/test-hugo
+script:
+  - git submodule update --init --recursive
+  - go get -u -v github.com/spf13/hugo
+  - hugo version
+  - cd ./hugo-website
+  - hugo --buildDrafts
+  - ../deploy.sh
