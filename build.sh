@@ -15,7 +15,7 @@ hugo version
 
 # build the static web content
 cd ./hugo-website
-if [ "$DRONE_BRANCH" == "master" ]; then
+if [ "$DRONE_BRANCH" == "xxxmaster" ]; then
   # build production posts only
   hugo --theme=hugo-uno
 else
@@ -29,3 +29,7 @@ if [ "$DRONE" == "true" ]; then
 else
   echo "...local, don't push"
 fi
+
+# list static web content
+ls -alR ./public
+

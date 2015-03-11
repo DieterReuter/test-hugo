@@ -32,7 +32,7 @@ Use this deep link for a direct login with your github account: https://drone.io
 Now let's define our build steps properly. We're just using a dedicated build script, which we'll keep inside our source repo. I really like transparency and include all build steps within the repo itself, but it's on your choice to hide some sensitive code and credentials.
 
 ```bash
-./drone.io.build.sh
+./build.sh
 ```
 Now hit `save` a couple of times, until `Drone.io` says, your build definition is saved.
 
