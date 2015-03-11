@@ -7,3 +7,7 @@ hugo version
 
 pwd
 env
+
+cd ./hugo-website
+hugo --theme=hugo-uno --buildDrafts
+ls -alR ./public
