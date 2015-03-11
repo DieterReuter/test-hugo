@@ -14,8 +14,9 @@ hugo version
 
 # build the static web content
 cd ./hugo-website
+rm -fr ./public
 for i in $(find . -type d -regex ``./[^.].*'' -empty); do touch $i"/.gitignore"; done;
-if [ "$DRONE_BRANCH" == "xxxmaster" ]; then
+if [ "$DRONE_BRANCH" == "master" ]; then
   # build production posts only
   hugo --theme=hugo-uno
 else
@@ -26,6 +27,7 @@ fi
 # push the static web content to gh-pages
 if [ "$DRONE" == "true" ]; then
   echo "...push it"
+  ../deploy.sh
 else
   echo "...local, don't push"
   open http://localhost:1313/
