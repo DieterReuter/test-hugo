@@ -10,7 +10,7 @@ else
 fi
 
 # detect if we are running from a master or a dev branch
-GH_MASTER=Y
+#GH_MASTER=Y
 
 
 # fetch hugo and show version in build log
