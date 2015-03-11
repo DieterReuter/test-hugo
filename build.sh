@@ -6,6 +6,10 @@ set -e
 #pwd
 #env
 
+# update themes submodules
+git pull --recurse-submodules
+git submodule update --recursive
+
 # fetch hugo and show version in build log
 if [ "$DRONE" == "true" ]; then
   go get -u -v github.com/spf13/hugo
