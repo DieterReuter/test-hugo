@@ -7,8 +7,7 @@ set -e
 #env
 
 # update themes submodules
-git pull --recurse-submodules
-git submodule update --recursive
+git submodule update --init --recursive
 
 # fetch hugo and show version in build log
 if [ "$DRONE" == "true" ]; then
